@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiénes Somos - Multimuebles RH</title>
+    <title>Quiénes Somos - Multimuebles</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
-        <div class="logo">MULTIMUEBLES RH</div>
+        <div class="logo">MULTIMUEBLES</div>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Catálogo</a></li>
@@ -17,33 +17,83 @@
         </ul>
     </nav>
 
-    <section>
-        <h2>Quiénes Somos</h2>
-        <p>Transformamos espacios con muebles a medida y diseños que inspiran confort y estilo</p>
-        
-        <div style="max-width:800px; margin:40px auto; text-align:left;">
-            <h3>Nuestra historia</h3>
-            <p>Somos una iniciativa reciente dedicada al diseño y producción de muebles a medida. 
-                Nacimos con la idea de ofrecer piezas pensadas para cada espacio; en esta etapa inicial estamos probando prototipos, trabajando 
-                con materiales locales y aprendiendo de nuestros primeros clientes..</p>
-            
-            <h3>Nuestra misión</h3>
-            <p>Ofrecer muebles bellos, duraderos y a precios justos que mejoren la calidad de vida de las familias colombianas.</p>
-            
-            <h3>Nuestros valores</h3>
-            <ul style="margin-left:30px; line-height:2;">
-                <li>Calidad en cada detalle</li>
-                <li>Atención personalizada</li>
-                <li>Precios honestos</li>
-                <li>Entrega puntual</li>
-                <li>Compromiso con la región</li>
-            </ul>
+    <header class="hero who-hero">
+        <div class="hero-inner">
+            <h1>Quiénes Somos</h1>
+            <p>Transformamos espacios con muebles a medida y diseños que inspiran confort y estilo.</p>
+            <p class="status-banner">Apenas estamos empezando a crear muebles — ¡únete como cliente piloto!</p>
+            <a class="btn" href="contacto.html">Solicita tu diseño</a>
         </div>
+    </header>
+
+    <section class="who-content">
+        <div class="who-left">
+            <h2>Nuestra Historia</h2>
+            <p>Somos una iniciativa reciente dedicada al diseño y producción de muebles a medida. Nacimos con la idea de ofrecer piezas pensadas para cada espacio; en esta etapa inicial estamos probando prototipos, trabajando con materiales locales y aprendiendo de nuestros primeros clientes.</p>
+
+            <h3>Nuestra Misión</h3>
+            <p>Ofrecer muebles bellos, duraderos y a precios justos que mejoren la calidad de vida de las familias colombianas.</p>
+
+            <div class="counters">
+                <div class="counter"><span data-target="3">0</span> <small>Meses</small></div>
+                <div class="counter"><span data-target="25">0</span> <small>Clientes piloto</small></div>
+                <div class="counter"><span data-target="5">0</span> <small>Prototipos</small></div>
+            </div>
+        </div>
+
+        <aside class="who-right">
+            <h2>Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-card"><h4>Calidad</h4><p>Materiales seleccionados y acabado impecable.</p></div>
+                <div class="value-card"><h4>Diseño</h4><p>Propuestas prácticas y estéticas para cada espacio.</p></div>
+                <div class="value-card"><h4>Compromiso</h4><p>Entrega puntual y atención cercana.</p></div>
+                <div class="value-card"><h4>Sostenibilidad</h4><p>Materiales responsables y procesos eficientes.</p></div>
+            </div>
+
+            <h3>Nuestro Equipo</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="María Elena">
+                    <h5>María Elena</h5>
+                    <p>Fundadora - Diseño</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1545996124-59b98b1b2d88?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Equipo">
+                    <h5>Carlos</h5>
+                    <p>Carpintero jefe</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1551120046-4b1d13b0a9e1?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Equipo">
+                    <h5>Laura</h5>
+                    <p>Atención al cliente</p>
+                </div>
+            </div>
+        </aside>
     </section>
 
+    <script>
+        // Contadores animados
+        document.addEventListener('DOMContentLoaded', function(){
+            const counters = document.querySelectorAll('.counter span');
+            counters.forEach(counter => {
+                const update = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const current = +counter.innerText;
+                    const increment = Math.ceil(target / 100);
+                    if(current < target){
+                        counter.innerText = current + increment;
+                        setTimeout(update, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                update();
+            });
+        });
+    </script>
+
     <footer>
-        <p>© 2025 Multimuebles Valledupar | María Elena Martínez – UNAD</p>
+        <p>© 2025 Multimuebles Santa Ana, Magdalena | la mejor calidad el mejor precio</p>
     </footer>
 </body>
-
 </html>
