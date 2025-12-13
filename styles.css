@@ -301,4 +301,101 @@ footer {
   transform: translateY(-3px);
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
+/* ===============================
+   SECCIÓN QUIÉNES SOMOS / HISTORIA
+   =============================== */
+
+.about-section {
+  background: #ffffff;
+  padding: 120px 20px;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título principal */
+.about-container h2 {
+  font-size: 42px;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+/* Subtítulo (Misión) */
+.about-container h3 {
+  font-size: 22px;
+  margin: 35px 0 15px;
+  color: #d4af37;
+}
+
+/* Texto descriptivo */
+.about-text {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Estadísticas */
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 40px 0 80px;
+  flex-wrap: wrap;
+}
+
+.about-stats div {
+  text-align: center;
+}
+
+.about-stats strong {
+  display: block;
+  font-size: 38px;
+  color: #d4af37;
+}
+
+.about-stats span {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Valores (reutiliza tu values-grid sin conflicto) */
+.about-section .value-card {
+  background: #f9f9f9;
+  padding: 25px 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.about-section .value-card:hover {
+  transform: translateY(-8px);
+}
+
+.about-section .value-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.about-section .value-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container h2 {
+    font-size: 34px;
+  }
+
+  .about-stats {
+    gap: 30px;
+  }
+}
+
 
