@@ -41,11 +41,73 @@
         </div>
     </section>
 
+    <!-- Formulario de contacto que envía la solicitud a WhatsApp -->
+    <section id="contacto-form" aria-labelledby="contacto-title">
+        <h2 id="contacto-title">Solicita tu cotización por WhatsApp</h2>
+        <p>Rellena los datos y te enviaremos la solicitud a nuestro WhatsApp.</p>
+
+        <form id="whatsappForm">
+            <label for="nombre">Nombre completo</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo electrónico</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="telefono">Teléfono</label><br>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+
+            <label for="mensaje">Mensaje / Detalles del pedido</label><br>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+            <button type="submit" class="btn">Enviar por WhatsApp</button>
+        </form>
+    </section>
+
     <footer>
         <p>© 2025 Multimuebles Valledupar | María Elena Martínez – Marketing y Negocios Digitales UNAD</p>
     </footer>
-</body>
-</body>
 
+    <script>
+    (function() {
+        const form = document.getElementById('whatsappForm');
+
+        // RECUERDA: sustituye este número por el número de WhatsApp destino en formato internacional SIN signos.
+        // Ejemplo para Colombia: 57 + número -> 573001234567
+        // Pon aquí tu número destino:
+        const WHATSAPP_NUMBER = '573226895334';
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!WHATSAPP_NUMBER || WHATSAPP_NUMBER.includes('TU_NUMERO')) {
+                alert('Por favor configura el número de WhatsApp destino en el código (const WHATSAPP_NUMBER).');
+                return;
+            }
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            if (!nombre || !telefono || !mensaje) {
+                alert('Por favor completa los campos requeridos: Nombre, Teléfono y Mensaje.');
+                return;
+            }
+
+            // Construir el texto que llegará por WhatsApp
+            let text = `Nueva solicitud desde Multimuebles:%0A`;
+            text += `Nombre: ${encodeURIComponent(nombre)}%0A`;
+            if (email) text += `Correo: ${encodeURIComponent(email)}%0A`;
+            text += `Teléfono: ${encodeURIComponent(telefono)}%0A`;
+            text += `Mensaje: ${encodeURIComponent(mensaje)}`;
+
+            // Usamos la URL de wa.me para abrir WhatsApp Web o la app móvil
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+            // Abrir en nueva pestaña/ventana
+            window.open(url, '_blank');
+        });
+    })();
+    </script>
+</body>
 </html>
-
