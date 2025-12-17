@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multimuebles - Muebles y Multimuebles en Santa  Ana (Magdalena) </title>
+    <title>Multimuebles RH - Muebles y Multimuebles en Santa  Ana (Magdalena) </title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
-        <div class="logo">MULTIMUEBLES</div>
+        <div class="logo">MULTIMUEBLES RH</div>
         <ul>
             <li><a href="index.html" class="active">Inicio</a></li>
             <li><a href="servicios.html">Catálogo</a></li>
@@ -19,7 +19,7 @@
 
     <header class="hero">
         <h1>Muebles de Calidad para tu Hogar y Oficina</h1>
-        <p>Salas modernas, comedores elegantes, alcobas cómodas y muebles de oficina en Santa  Ana (Magdalena) y toda su region</p>
+        <p>Salas modernas, comedores elegantes, alcobas cómodas, Cocinas integrales y muebles de oficina en Santa  Ana (Magdalena) y toda su region</p>
         <a href="contacto.html" class="btn">Cotiza Ahora</a>
     </header>
 
@@ -35,7 +35,7 @@
                 <p>El mejor precio del mercado sin intermediarios</p>
             </div>
             <div class="card">
-                <h3>Envíos a Todo Colombia</h3>
+                <h3>Envíos a Toda Santa Ana y sus regiones </h3>
                 <p>Entrega segura a domicilio</p>
             </div>
         </div>
@@ -50,9 +50,6 @@
             <label for="nombre">Nombre completo</label><br>
             <input type="text" id="nombre" name="nombre" required><br><br>
 
-            <label for="email">Correo electrónico</label><br>
-            <input type="email" id="email" name="email"><br><br>
-
             <label for="telefono">Teléfono</label><br>
             <input type="tel" id="telefono" name="telefono" required><br><br>
 
@@ -64,7 +61,7 @@
     </section>
 
     <footer>
-        <p>© 2025 Multimuebles Valledupar | María Elena Martínez – Marketing y Negocios Digitales UNAD</p>
+        <p>© 2025 Multimuebles RH| Santa Ana, Magdalena– Regiones</p>
     </footer>
 
     <script>
@@ -85,7 +82,6 @@
             }
 
             const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
             const telefono = document.getElementById('telefono').value.trim();
             const mensaje = document.getElementById('mensaje').value.trim();
 
@@ -97,7 +93,6 @@
             // Construir el texto que llegará por WhatsApp
             let text = `Nueva solicitud desde Multimuebles:%0A`;
             text += `Nombre: ${encodeURIComponent(nombre)}%0A`;
-            if (email) text += `Correo: ${encodeURIComponent(email)}%0A`;
             text += `Teléfono: ${encodeURIComponent(telefono)}%0A`;
             text += `Mensaje: ${encodeURIComponent(mensaje)}`;
 
@@ -111,3 +106,4 @@
     </script>
 </body>
 </html>
+
